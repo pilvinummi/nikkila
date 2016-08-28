@@ -38,6 +38,13 @@ function init() {
   }).addTo(map);
 
   //Muistojen Nikkilä kohteet kartalle
+  
+  var mnIkoni = L.icon({
+	iconUrl: 'karttakohde.png',
+	iconSize: [30, 36],
+	iconAnchor: [15, 36],
+	popupAnchor: [0, -24]
+  });  
 
   var geojsonFeature = {
   	"type": "Feature", 
@@ -90,6 +97,15 @@ function onEachFeature(feature, layer) {
 
 	layer.bindPopup(popupContent);
 }
+
+
+var mnLayer = L.geoJson(geojsonFeature, {
+	pointToLayer: function (feature, latlng) {
+		return L.marker(latlng, {icon: mnIkoni});
+	},
+	onEachFeature: onEachFeature
+}).addTo(map);
+
 /*
 L.geoJson(geojsonFeatures, {
 	style: function (feature) {
@@ -109,11 +125,11 @@ L.geoJson(geojsonFeatures, {
 }).addTo(map);  
 
 */
-  
+  /*
 L.geoJson(geojsonFeature, {
     onEachFeature: onEachFeature
 }).addTo(map);  
-  
+  */
 //L.geoJson(geojsonFeature).addTo(map);
 
 //var myLayer = L.geoJson().addTo(map);
