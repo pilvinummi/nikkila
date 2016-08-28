@@ -51,6 +51,31 @@ function init() {
   	}
   };
   
+var geojsonFeatures = {
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "popupContent": "18th & California Light Rail Stop"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [60.379325, 25.270468]
+            }
+        },{
+            "type": "Feature",
+            "properties": {
+                "popupContent": "20th & Welton Light Rail Stop"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [60.379325, 25.270468]
+            }
+        }
+    ]
+};
+
   
 function onEachFeature(feature, layer) {
 	var popupContent = "<p>I started out as a GeoJSON " +
@@ -63,7 +88,7 @@ function onEachFeature(feature, layer) {
 	layer.bindPopup(popupContent);
 }
 
-L.geoJson(geojsonFeature, {
+L.geoJson(geojsonFeatures, {
 	style: function (feature) {
 		return feature.properties && feature.properties.style;
 	},
