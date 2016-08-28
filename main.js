@@ -8,8 +8,8 @@ function init() {
   var legend = L.control({position: 'bottomleft'});
   
   //Aineistot ovat esiladattuja nopeamman toimivuuden takaamiseksi
-  var all = "https://pesonet1.github.io/Leaflet/all.json"
-  var paavo_wfs = "https://pesonet1.github.io/Leaflet/paavo.json"
+  //var all = "https://pesonet1.github.io/Leaflet/all.json"
+  //var paavo_wfs = "https://pesonet1.github.io/Leaflet/paavo.json"
   
   //Geojson-objektit lisataan omiin layergrouppeihin
   var kaikki = new L.LayerGroup();
@@ -30,8 +30,11 @@ function init() {
   var taso;
   
   
-  var southWest = L.latLng(60.083745, 24.760265);
-  var northEast = L.latLng(60.317492, 25.368633);
+  //var southWest = L.latLng(60.083745, 24.760265);
+//  var northEast = L.latLng(60.317492, 25.368633);
+  
+  var southWest = L.latLng(60.376496, 25.264143);
+  var northEast = L.latLng(60.391150, 25.304122);
   var bounds = L.latLngBounds(southWest, northEast);
   
   var map = L.map('map', {
