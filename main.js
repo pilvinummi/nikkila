@@ -1,13 +1,6 @@
 function init() {
   
-  //Kaikki webbikartassa käytettävät globaalit muuttujat
-  //var information = document.getElementById('information');
-  //var removeButton = document.getElementById('remove');
-  //var resetButton = document.getElementById('reset');
-  
-  //var legend = L.control({position: 'bottomleft'});
-  
-  //Aineistot ovat esiladattuja nopeamman toimivuuden takaamiseksi
+  //Aineistot
   var muistot = "https://pilvinummi.github.io/nikkila/muistojennikkila.json"
   
 
@@ -45,13 +38,7 @@ function init() {
   }).addTo(map);
 
   //Muistojen Nikkilä kohteet kartalle
-  function onEachFeature(feature, layer) {
-    // does this feature have a property named popupContent?
-    if (feature.properties && feature.properties.popupContent) {
-        layer.bindPopup(feature.properties.popupContent);
-    }
-  }
-  
+
   var geojsonFeature = {
   	"type": "Feature", 
   	"properties": { 
@@ -62,7 +49,7 @@ function init() {
   		"type": "Point", 
   		"coordinates": [ 60.379325, 25.270468 ]
   	}
-  }
+  };
   
   var geojsonMarkerOptions = {
     radius: 8,
@@ -73,10 +60,7 @@ function init() {
     fillOpacity: 0.8
 };
 
-L.geoJson(geojsonFeature, {
-    onEachFeature: onEachFeature
-}).addTo(map);
-  
-  //L.geoJson(muistofeature).addTo(map);
+var myLayer = L.geoJson().addTo(map);
+myLayer.addData(geojsonFeature);
   
 }
