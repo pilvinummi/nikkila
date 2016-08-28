@@ -33,8 +33,8 @@ function init() {
   //var southWest = L.latLng(60.083745, 24.760265);
 //  var northEast = L.latLng(60.317492, 25.368633);
   
-  var southWest = L.latLng(60.376496, 25.264143);
-  var northEast = L.latLng(60.391150, 25.304122);
+  var southWest = L.latLng(60.352727, 25.218447);
+  var northEast = L.latLng(60.390734, 25.280363);
   var bounds = L.latLngBounds(southWest, northEast);
   
   var map = L.map('map', {
