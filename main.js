@@ -55,5 +55,8 @@ function init() {
 
 //  var myLayer = L.geoJson().addTo(map);
 //  myLayer.addData(geojsonFeature);
+
+var marker = L.marker([60.379325, 25.270468]).addTo(map);
+marker.bindPopup("Rosenholmitalo.").openPopup();
   
 }
