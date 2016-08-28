@@ -38,7 +38,7 @@ function init() {
   var bounds = L.latLngBounds(southWest, northEast);
   
   var map = L.map('map', {
-    maxBounds: bounds,
+    //maxBounds: bounds,
     maxZoom: 18,
     minZoom: 11
   });
