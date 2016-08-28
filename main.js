@@ -10,10 +10,17 @@ function init() {
   //Aineistot ovat esiladattuja nopeamman toimivuuden takaamiseksi
   //var all = "https://pesonet1.github.io/Leaflet/all.json"
   //var paavo_wfs = "https://pesonet1.github.io/Leaflet/paavo.json"
+  var muistot = "https://pilvinummi.github.io/nikkila/muistojennikkila.json"
   
   //Geojson-objektit lisataan omiin layergrouppeihin
   var kaikki = new L.LayerGroup();
-  var ulkoilu_taso = new L.LayerGroup();
+  
+  //Muistojen Nikkilä koheet kartalle
+  L.geoJson(muistot).addTo(map);
+  
+
+  
+/*  var ulkoilu_taso = new L.LayerGroup();
   var kartano_taso = new L.LayerGroup();
   var kesasiirtola_taso = new L.LayerGroup();
   var viljelyalueet_taso = new L.LayerGroup();
@@ -27,7 +34,7 @@ function init() {
   //Muuttujat filterointiin
   var filter1, filter2, filter3, fillcolor1, fillcolor2, fillcolor3;
   var radius;
-  var taso;
+  var taso; */
   
   
   //var southWest = L.latLng(60.083745, 24.760265);
