@@ -38,7 +38,7 @@ function init() {
   }).addTo(map);
 
   //Muistojen Nikkilä kohteet kartalle
-
+/*
   var geojsonFeature = {
   	"type": "Feature", 
   	"properties": { 
@@ -50,7 +50,9 @@ function init() {
   		"coordinates": [25.270468, 60.379325]
   	}
   };
-/*  
+  
+*/  
+  
 var geojsonFeatures = {
     "type": "FeatureCollection",
     "features": [
@@ -61,7 +63,7 @@ var geojsonFeatures = {
             },
             "geometry": {
                 "type": "Point",
-                "coordinates": [60.379325, 25.270468]
+                "coordinates": [25.270468, 60.379325]
             }
         },{
             "type": "Feature",
@@ -70,7 +72,7 @@ var geojsonFeatures = {
             },
             "geometry": {
                 "type": "Point",
-                "coordinates": [60.379325, 25.270468]
+                "coordinates": [25.270468, 60.379325]
             }
         }
     ]
@@ -105,9 +107,9 @@ L.geoJson(geojsonFeatures, {
 	}
 }).addTo(map);  
 
-*/
+
   
-L.geoJson(geojsonFeature).addTo(map);
+//L.geoJson(geojsonFeature).addTo(map);
 
 //var myLayer = L.geoJson().addTo(map);
 //myLayer.addData(geojsonFeature);
