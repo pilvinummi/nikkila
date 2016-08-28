@@ -39,6 +39,8 @@ function init() {
 
   //Muistojen Nikkilä kohteet kartalle
 
+
+
   var geojsonFeature = {
   	"type": "Feature", 
   	"properties": { 
@@ -47,7 +49,7 @@ function init() {
   	}, 
   	"geometry": { 
   		"type": "Point", 
-  		"coordinates": [ 60.379325, 25.270468 ]
+  		"coordinates": [60.379325, 25.270468]
   	}
   };
   
