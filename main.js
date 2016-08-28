@@ -43,7 +43,8 @@ function init() {
   	"type": "Feature", 
   	"properties": { 
   		"nimi": "Rosenholmin talo", 
-  		"instagram": "rosenholm.htm" 
+  		"instagram": "rosenholm.htm",
+  		"popupContent": "Tässä on rosenholmin talo."
   	}, 
   	"geometry": { 
   		"type": "Point", 
@@ -109,7 +110,11 @@ L.geoJson(geojsonFeatures, {
 
 */
   
-L.geoJson(geojsonFeature).addTo(map);
+L.geoJson(geojsonFeature, {
+    onEachFeature: onEachFeature
+}).addTo(map);  
+  
+//L.geoJson(geojsonFeature).addTo(map);
 
 //var myLayer = L.geoJson().addTo(map);
 //myLayer.addData(geojsonFeature);
