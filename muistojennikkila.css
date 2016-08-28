@@ -81,8 +81,9 @@
 
       .info {
       	position:absolute;
-	top:20px; right:20px; width:300px;
+	top:0; right:0; width:300px;
 	padding: 6px 8px;
+	margin:20px;
 	font: 14px/16px Arial, Helvetica, sans-serif;
 	background: #fdebdf;
 	box-shadow: 0 0 15px rgba(0,0,0,0.2);
