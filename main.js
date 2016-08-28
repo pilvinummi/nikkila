@@ -98,7 +98,7 @@ L.geoJson(geojsonFeatures, {
 	pointToLayer: function (feature, latlng) {
 		return L.circleMarker(latlng, {
 			radius: 8,
-			fillColor: "#ff7800",
+			fillColor: "#3b3288",
 			color: "#000",
 			weight: 1,
 			opacity: 1,
