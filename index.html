@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Helsingin vihertiheys</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- jQuery scriptit -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    
+    <!-- Bootstrap scriptit -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    
+    <!-- CSS -->
+    <link href='vihreahelsinki.css' rel='stylesheet' />
+   
+  </head>  
+    
+  <body onload="init()">
+    
+    <!-- MapBox scriptit -->
+    <script src='https://api.mapbox.com/mapbox.js/v2.2.4/mapbox.js'></script>
+    <link href='https://api.mapbox.com/mapbox.js/v2.2.4/mapbox.css' rel='stylesheet' />
+    
+    <!-- Leaflet scriptit -->
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+    <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+    
+    <!-- Turf -->
+    <script src="https://pesonet1.github.io/Leaflet/turf.min.js"></script>
+    
+    <!-- Toiminallisuuden scriptit -->
+    <script src="https://pesonet1.github.io/Leaflet/main.js"></script>
+
+
+    <script>
+      function toggleInfo() {
+        var info = document.getElementById("infoteksti");
+        if (info.style.display == "none") {
+          info.style.display = "block";
+        }
+        else {
+          info.style.display = "none";
+        }
+      }
+    </script>
+
+    
+    <div class="span9" style="height:100%">
+      <div id="map-wrapper">
+    	<div id="map"></div>
+      </div>
+    
+      <div id='sidebar' class='sidebar'>
+    	
+    	<h1>Helsingin vihertiheys</h1>
+    	
+    	<div id="info" class="info">
+    	  <div id="infoteksti">
+    	    <p>Helsingin viherverkosto perustuu <a href="http://www.yleiskaava.fi/2013/miten-rakentaminen-ja-virkistysalueet-sovitetaan-yhteen/" target="_blank">laajoihin viheralueisiin eli vihersormiin</a>. Kaupungin pinta-alasta 40 % on viher- tai virkistysaluetta ja metsän osuus on noin 20 %. Kaupunkirakenteen tiivistyessä osa täydennysrakentamisen paineesta kohdistuu viheralueille.</p>
+	    <p>Saavutettavuus on yksi viher- ja virkistysalueiden laadun mittari. Lähipuistojen hyvänä kävelyetäisyytenä voidaan pitää 150 metriä ja laajempien kaupunginosapuistojen tai puistometsien 300 metriä. Tämän kartan avulla voit arvioida Helsingin viheralueiden saavutettavuutta ja sijaintia suhteessa asukastiheyteen.</p>
+    	  </div>
+    	  
+    	  <div id="infoLink" class="infoLink"><a onclick="javascript:toggleInfo();">Piilota/Näytä info</a></div>
+	</div>
+    	
+    	<p>
+    	
+    	<h2>Kaupunginosan tiedot:</h2>
+    	
+	<div class="information" id="information">
+	  <em>Valitse kaupunginosa kartalta</em>
+	</div>
+    	
+    	<p>
+    	
+    	<h2>Näytä kartalla:</h2>
+    	
+    	<p>
+    	
+ 	<label><input type="checkbox" id="karttataso"/> Kaikki viheralueet</label><br/>
+ 	
+ 	<p>
+
+	<div class="ScrollStyle">
+    	  <div id="ulkoilumetsat"></div><div id="label"><input type="checkbox" id="ulkoilumetsa"/> Ulkoilumetsät</div>
+	  <div id="kartanot"></div><div id="label"><input type="checkbox" id="kartano"/> Kartano- ja Huvila-alueet</div>
+	  <div id="kesamajat"></div><div id="label"><input type="checkbox" id="kesamajasiirtola"/> Kesämaja-alueet ja Siirtolapuutarhat</div>
+	  <div id="palstat"></div><div id="label"><input type="checkbox" id="viljelypalsta_alueet"/> Viljelypalstat ja Viljelypalsta-alueet</div>
+	  <div id="koirat"></div><div id="label"><input type="checkbox" id="koira"/> Koira-aitaukset</div>
+	  <div id="leikki"></div><div id="label"><input type="checkbox" id="leikkipaikat"/> Leikkipaikat ja Leikkipuistot</div>
+	  <div id="suojelu"></div><div id="label"><input type="checkbox" id="luonto"/> Luonnonsuojelualueet</div>
+	  <div id="ranta"></div><div id="label"><input type="checkbox" id="uimaranta_venesatama"/> Uimarannat ja Venesatamat</div>
+	  <div id="hauta"></div><div id="label"><input type="checkbox" id="haudat"/> Hautausmaat</div>
+      	  <div id="muut"></div><div id="label"><input type="checkbox" id="muut_viheralueet"/> Muut viheralueet</div>
+	</div>
+	
+	<br>
+	
+    	<button id="reset" class="btn btn-primary">Poista tasot kartalta</button>
+   
+   	<p>
+   	
+   	<h2>Valitse puskurin suuruus:</h2>
+	
+	<div id="bufferi" class="bufferi">
+    	  <label><input type="radio" id="none" value="1" name="check[]"/> Ei puskuria</label>
+    	  <label><input type="radio" id="box_150" value="1" name="check[]"/> 150m puskuri</label>
+ 	  <label><input type="radio" id="box_300" value="1" name="check[]"/> 300m puskuri</label>
+ 	</div>
+ 	
+ 	<br>
+ 	
+ 	<button id="remove" class="btn btn-primary">Poista puskurit kartalta</button> <!--btn btn-primary-->
+ 	<button class="btn btn-primary btn-round" onclick="alert('Valitse puskurin suuruus ja klikkaa kartalta haluamaasi viheraluetta.')">i</button>
+    	
+    	<p>
+    
+    	<h2>Kartta-aineistot:</h2>
+	
+	<p>
+	  <a href="http://www.hri.fi/fi/dataset/helsingin-kaupungin-yleisten-alueiden-rekisteri" target="_blank">Helsingin kaupungin yleisten alueiden rekisteri</a><br/>
+	  <a href="http://www.tilastokeskus.fi/tup/rajapintapalvelut/paavo.html" target="_blank">Tilastokeskuksen Paavo-rajapinta</a>
+	</p>
+	
+      </div>
+    </div>
+    
+  </body>
+</html>
