@@ -51,10 +51,10 @@ function init() {
   	}
   };
   
-  L.geoJson(geojsonFeature).addTo(map);
+L.geoJson(geojsonFeature).addTo(map);
 
-//  var myLayer = L.geoJson().addTo(map);
-//  myLayer.addData(geojsonFeature);
+//var myLayer = L.geoJson().addTo(map);
+//myLayer.addData(geojsonFeature);
 
 var marker = L.marker([60.379325, 25.270468]).addTo(map);
 marker.bindPopup("Rosenholmitalo.").openPopup();
