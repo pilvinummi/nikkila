@@ -74,10 +74,16 @@ function init() {
   }).addTo(map);
 
   //Muistojen Nikkilä koheet kartalle
-  var muistofeature = {
+  function onEachFeature(feature, layer) {
+    // does this feature have a property named popupContent?
+    if (feature.properties && feature.properties.popupContent) {
+        layer.bindPopup(feature.properties.popupContent);
+    }
+  }
+  
+  var geojsonFeature = {
   	"type": "Feature", 
   	"properties": { 
-  		"id": 1, 
   		"nimi": "Rosenholmin talo", 
   		"instagram": "rosenholm.htm" 
   	}, 
@@ -95,6 +101,10 @@ function init() {
     opacity: 1,
     fillOpacity: 0.8
 };
+
+L.geoJson(geojsonFeature, {
+    onEachFeature: onEachFeature
+}).addTo(map);
   
   //L.geoJson(muistofeature).addTo(map);
   
