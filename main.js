@@ -74,7 +74,6 @@ function init() {
   }).addTo(map);
 
   //Muistojen Nikkilä koheet kartalle
-  
   var muistofeature = {
   	"type": "Feature", 
   	"properties": { 
@@ -88,7 +87,22 @@ function init() {
   	}
   }
   
-  L.geoJson(muistofeature).addTo(map);
+  var geojsonMarkerOptions = {
+    radius: 8,
+    fillColor: "#ff7800",
+    color: "#000",
+    weight: 1,
+    opacity: 1,
+    fillOpacity: 0.8
+};
+  
+  //L.geoJson(muistofeature).addTo(map);
+  
+  L.geoJson(muistofeature, {
+    pointToLayer: function (feature, latlng) {
+        return L.circleMarker(latlng, geojsonMarkerOptions);
+    }
+}).addTo(map);
   
   
   
