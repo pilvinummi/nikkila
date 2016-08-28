@@ -74,6 +74,7 @@ function init() {
   }).addTo(map);
 
   //Muistojen Nikkilä koheet kartalle
+  L.geoJson(muistot).addTo(map);
   
   //Taman funktion avulla uusi karttataso voidaan kutsua kayttaen haluttua filteria ja tason varia
   function update_layer() {
