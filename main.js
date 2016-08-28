@@ -16,7 +16,7 @@ function init() {
   var kaikki = new L.LayerGroup();
   
   //Muistojen Nikkilä koheet kartalle
-  L.geoJson(muistot).addTo(map);
+
   
 
   
