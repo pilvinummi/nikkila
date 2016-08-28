@@ -13,9 +13,9 @@ function init() {
   var muistot = "https://pilvinummi.github.io/nikkila/muistojennikkila.json"
   
   //Geojson-objektit lisataan omiin layergrouppeihin
-  var kaikki = new L.LayerGroup();
+ // var kaikki = new L.LayerGroup();
   
-  //Muistojen Nikkilä koheet kartalle
+
 
   
 
@@ -67,10 +67,13 @@ function init() {
   //MapBox-light taustakartta
   basemap = L.tileLayer('https://api.mapbox.com/styles/v1/pilkku/cisdj0khh002z2xpe214xf6sy/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoicGlsa2t1IiwiYSI6ImNpc2RpeHF6dzAwMTUydW5xbWl3bTk3eWQifQ.EltRtFPTdAbejh3DhF2irg', {
     maxZoom: 18,
+    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+		'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+		'Imagery © <a href="http://mapbox.com">Mapbox</a>',
     id: 'mapbox.light'
   }).addTo(map);
 
-
+  //Muistojen Nikkilä koheet kartalle
   
   //Taman funktion avulla uusi karttataso voidaan kutsua kayttaen haluttua filteria ja tason varia
   function update_layer() {
