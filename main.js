@@ -44,7 +44,11 @@ function init() {
   });
   
   //Fit to bounds
-  map.fitBounds(bounds);
+//  map.fitBounds(bounds);
+
+  //Set view
+  var center = L.latLng(60.352727, 25.218447);
+  map.setView( center , 13 );
   	
   //Scale
   L.control.scale({
