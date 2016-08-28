@@ -38,7 +38,7 @@ function init() {
   }).addTo(map);
 
   //Muistojen Nikkilä kohteet kartalle
-/*
+
   var geojsonFeature = {
   	"type": "Feature", 
   	"properties": { 
@@ -51,7 +51,7 @@ function init() {
   	}
   };
   
-*/  
+  
   
 var geojsonFeatures = {
     "type": "FeatureCollection",
@@ -109,7 +109,7 @@ L.geoJson(geojsonFeatures, {
 
 */
   
-L.geoJson(geojsonFeatures).addTo(map);
+L.geoJson(geojsonFeature).addTo(map);
 
 //var myLayer = L.geoJson().addTo(map);
 //myLayer.addData(geojsonFeature);
