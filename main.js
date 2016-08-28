@@ -44,7 +44,7 @@ function init() {
   });
   
   //Fit to bounds
-  map.fitBounds(bounds);
+  //map.fitBounds(bounds);
   	
   //Scale
   L.control.scale({
