@@ -81,7 +81,7 @@
 
       .info {
       	position:absolute;
-	top:0; right:0; width:300px;
+	top:20px; right:20px; width:300px;
 	padding: 6px 8px;
 	font: 14px/16px Arial, Helvetica, sans-serif;
 	background: #fdebdf;
@@ -91,6 +91,11 @@
 	overflow-x:auto;
 	z-index:80;
       }
+      .info h1 {
+	margin: 0 0 5px;
+	font-size: 15px;	
+	color: #777;
+      }      
 	
       .info h4 {
 	margin: 0 0 5px;
@@ -118,158 +123,3 @@
 	clear:right;
 	}
 	
-      #ulkoilumetsat {
-	float:left;
-	width: 16px; 
-	height: 16px;
-	margin:0;
-	margin-right:4px;
-	background: #669966; 
-	-moz-border-radius: 8px; 
-	-webkit-border-radius: 8px; 
-	border-radius: 8px; 
-	clear:left;
-	} 
-	
-      #kartanot {
-	float:left;
-	width: 16px; 
-	height: 16px;
-	margin:0;
-	margin-right:4px;
-	background: #996699; 
-	-moz-border-radius: 8px; 
-	-webkit-border-radius: 8px; 
-	border-radius: 8px; 
-	clear:left;
-	} 
-	
-      #kesamajat {
-	float:left;
-	width: 16px; 
-	height: 16px;
-	margin:0;
-	margin-right:4px;
-	background: #666699; 
-	-moz-border-radius: 8px; 
-	-webkit-border-radius: 8px; 
-	border-radius: 8px; 
-	clear:left;
-	} 
-	
-      #palstat {
-	float:left;
-	width: 16px; 
-	height: 16px;
-	margin:0;
-	margin-right:4px;
-	background: #003366; 
-	-moz-border-radius: 8px; 
-	-webkit-border-radius: 8px; 
-	border-radius: 8px; 
-	clear:left;
-	} 	
-	
-      #koirat {
-	float:left;
-	width: 16px; 
-	height: 16px;
-	margin:0;
-	margin-right:4px;
-	background: #666633; 
-	-moz-border-radius: 8px; 
-	-webkit-border-radius: 8px; 
-	border-radius: 8px; 
-	clear:left;
-	} 
-	
-      #leikki {
-	float:left;
-	width: 16px; 
-	height: 16px;
-	margin:0;
-	margin-right:4px;
-	background: #663399; 
-	-moz-border-radius: 8px; 
-	-webkit-border-radius: 8px; 
-	border-radius: 8px; 
-	clear:left;
-	} 
-	
-      #suojelu {
-	float:left;
-	width: 16px; 
-	height: 16px;
-	margin:0;
-	margin-right:4px;
-	background: #336699; 
-	-moz-border-radius: 8px; 
-	-webkit-border-radius: 8px; 
-	border-radius: 8px; 
-	clear:left;
-	} 
-	
-      #ranta {
-	float:left;
-	width: 16px; 
-	height: 16px;
-	margin:0;
-	margin-right:4px;
-	background: #66cccc; 
-	-moz-border-radius: 8px; 
-	-webkit-border-radius: 8px; 
-	border-radius: 8px; 
-	clear:left;
-	} 
-	
-      #hauta {
-	float:left;
-	width: 16px; 
-	height: 16px;
-	margin:0;
-	margin-right:4px;
-	background: #666666; 
-	-moz-border-radius: 8px; 
-	-webkit-border-radius: 8px; 
-	border-radius: 8px; 
-	clear:left;
-	} 
-
-      #asema {
-	float:left;
-	width: 16px; 
-	height: 16px;
-	margin:0;
-	margin-right:4px;
-	background: #336666; 
-	-moz-border-radius: 8px; 
-	-webkit-border-radius: 8px; 
-	border-radius: 8px; 
-	clear:left;
-	}
-	
-      #yleis {
-	float:left;
-	width: 16px; 
-	height: 16px;
-	margin:0;
-	margin-right:4px;
-	background: #336666; 
-	-moz-border-radius: 8px; 
-	-webkit-border-radius: 8px; 
-	border-radius: 8px; 
-	clear:left;
-	}
-	
-      #muut {
-	float:left;
-	width: 16px; 
-	height: 16px;
-	margin:0;
-	margin-right:4px;
-	background: #336666; 
-	-moz-border-radius: 8px; 
-	-webkit-border-radius: 8px; 
-	border-radius: 8px; 
-	clear:left;
-	} 
