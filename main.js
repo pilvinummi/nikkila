@@ -74,7 +74,23 @@ function init() {
   }).addTo(map);
 
   //Muistojen Nikkilä koheet kartalle
-  L.geoJson(muistot).addTo(map);
+  
+  var muistofeature = {
+  	"type": "Feature", 
+  	"properties": { 
+  		"id": 1, 
+  		"nimi": "Rosenholmin talo", 
+  		"instagram": "rosenholm.htm" 
+  	}, 
+  	"geometry": { 
+  		"type": "Point", 
+  		"coordinates": [ 60.379325, 25.270468 ]
+  	}
+  }
+  
+  L.geoJson(muistofeature).addTo(map);
+  
+  
   
   //Taman funktion avulla uusi karttataso voidaan kutsua kayttaen haluttua filteria ja tason varia
   function update_layer() {
