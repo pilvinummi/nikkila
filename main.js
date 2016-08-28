@@ -39,8 +39,6 @@ function init() {
 
   //Muistojen Nikkilä kohteet kartalle
 
-
-
   var geojsonFeature = {
   	"type": "Feature", 
   	"properties": { 
@@ -53,16 +51,9 @@ function init() {
   	}
   };
   
-  var geojsonMarkerOptions = {
-    radius: 8,
-    fillColor: "#ff7800",
-    color: "#000",
-    weight: 1,
-    opacity: 1,
-    fillOpacity: 0.8
-};
+  L.geoJson(geojsonFeature).addTo(map);
 
-var myLayer = L.geoJson().addTo(map);
-myLayer.addData(geojsonFeature);
+//  var myLayer = L.geoJson().addTo(map);
+//  myLayer.addData(geojsonFeature);
   
 }
