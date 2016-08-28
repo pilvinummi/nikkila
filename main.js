@@ -72,7 +72,7 @@ var geojsonFeatures = {
             },
             "geometry": {
                 "type": "Point",
-                "coordinates": [25.370468, 60.479325]
+                "coordinates": [25.980468, 60.479325]
             }
         }
     ]
@@ -89,7 +89,7 @@ function onEachFeature(feature, layer) {
 
 	layer.bindPopup(popupContent);
 }
-
+/*
 L.geoJson(geojsonFeatures, {
 	style: function (feature) {
 		return feature.properties && feature.properties.style;
@@ -107,9 +107,9 @@ L.geoJson(geojsonFeatures, {
 	}
 }).addTo(map);  
 
-
+*/
   
-//L.geoJson(geojsonFeature).addTo(map);
+L.geoJson(geojsonFeature).addTo(map);
 
 //var myLayer = L.geoJson().addTo(map);
 //myLayer.addData(geojsonFeature);
