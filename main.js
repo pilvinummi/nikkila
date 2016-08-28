@@ -109,7 +109,7 @@ L.geoJson(geojsonFeatures, {
 
 */
   
-L.geoJson(geojsonFeature).addTo(map);
+L.geoJson(geojsonFeatures).addTo(map);
 
 //var myLayer = L.geoJson().addTo(map);
 //myLayer.addData(geojsonFeature);
