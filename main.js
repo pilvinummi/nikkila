@@ -109,11 +109,12 @@ var mnLayer = L.geoJson(geojsonFeature, {
 
 var mnLayer = L.geoJson(geojsonFeatures, {
 	pointToLayer: function (feature, latlng) {
-		return L.circleMarker(latlng, {icon: mnIkoni});
+		return L.marker(latlng, {icon: mnIkoni});
 	},
 	onEachFeature: onEachFeature
 }).addTo(map); 
-
+  
+  
 /*
 L.geoJson(geojsonFeatures, {
 	style: function (feature) {
