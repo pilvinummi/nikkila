@@ -60,7 +60,7 @@ function onEachFeature(feature, layer) {
 }
 
 
-var geojsonLayer = new L.GeoJSON.AJAX("MN_instagram_koe.geojson");
+var geojsonLayer = new L.GeoJSON.AJAX("https://pilvinummi.github.io/nikkila/MN_instagram_koe.geojson");
 geojsonLayer.addTo(map);
 
 /*
