@@ -46,6 +46,13 @@ function init() {
 	popupAnchor: [0, -24]
   });  
 
+  // load GeoJSON from an external file
+  $.getJSON("instagramkoe.geojson",function(data){
+    // add GeoJSON layer to the map once the file is loaded
+    L.geoJson(data).addTo(map);
+  });
+
+/*
   //Aineiston lataaminen
   var muistot_layer = $.ajax({ 
     url: muistot_url,
@@ -76,7 +83,7 @@ function init() {
       }).addTo(map);
     }
   }); 
-
+*/
 /*
 var geojsonFeature = {
   	"type": "Feature", 
