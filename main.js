@@ -1,7 +1,7 @@
 function init() {
   
   //Aineistot
-  var muistot = "https://pilvinummi.github.io/nikkila/muistojennikkila.json"
+  var muistot = "https://pilvinummi.github.io/nikkila/MN_instagram_koe.json"
   
 
   var southWest = L.latLng(60.352727, 25.218447);
