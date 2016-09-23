@@ -3,6 +3,6 @@
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3857" } },
                                                                                 
 "features": [
-{ "type": "Feature", "properties": { "Nro": 24.000000, "Paikka": "Aravatalo", "Lisätieto": "Yksityisyyttä", "Html": "https:\/\/instagram.com\/p\/BFcBpQYE5cP\/" }, "geometry": { "type": "Point", "coordinates": [ 2812671.9389817058, 8483930.9057844654, 0.0 ] } }
+{ "type": "Feature", "properties": { "Nro": 24.000000, "Paikka": "Aravatalo", "Lisätieto": "Yksityisyyttä", "Html": "https:\/\/instagram.com\/p\/BFcBpQYE5cP\/" }, "geometry": { "type": "Point", "coordinates": [ 25.270468, 60.379325 ] } }
 ]
 }
