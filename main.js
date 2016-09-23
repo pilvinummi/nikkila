@@ -1,7 +1,7 @@
 function init() {
   
   //Aineistot
-  var muistot = "https://pilvinummi.github.io/nikkila/MN_instagram_koe.json"
+  var muistot = "https://pilvinummi.github.io/nikkila/MN_instagram_koe.geojson"
   
 
   var southWest = L.latLng(60.352727, 25.218447);
@@ -59,11 +59,11 @@ function onEachFeature(feature, layer) {
 	layer.bindPopup(popupContent);
 }
 
-
+/*
 var geojsonLayer = new L.GeoJSON.AJAX("MN_instagram_koe.json");
 geojsonLayer.addTo(map);
+*/
 
-/*
 var mnLayer = L.geoJson(muistot, {
 	pointToLayer: function (feature, latlng) {
 		return L.marker(latlng, {icon: mnIkoni});
@@ -71,7 +71,7 @@ var mnLayer = L.geoJson(muistot, {
 	onEachFeature: onEachFeature
 }).addTo(map);
 
-
+/*
 L.geoJson(geojsonFeatures, {
 	style: function (feature) {
 		return feature.properties && feature.properties.style;
