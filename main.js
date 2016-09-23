@@ -45,7 +45,7 @@ function init() {
 	iconAnchor: [15, 36],
 	popupAnchor: [0, -24]
   });  
-
+/*
   var geojsonFeature = {
   	"type": "Feature", 
   	"properties": { 
@@ -58,7 +58,7 @@ function init() {
   		"coordinates": [25.270468, 60.379325]
   	}
   };
-  
+*/  
   
   
 var geojsonFeatures = {
@@ -67,7 +67,7 @@ var geojsonFeatures = {
         {
             "type": "Feature",
             "properties": {
-                "popupContent": "18th & California Light Rail Stop"
+                "popupContent": "Eka testi"
             },
             "geometry": {
                 "type": "Point",
@@ -76,11 +76,11 @@ var geojsonFeatures = {
         },{
             "type": "Feature",
             "properties": {
-                "popupContent": "20th & Welton Light Rail Stop"
+                "popupContent": "Toka testi"
             },
             "geometry": {
                 "type": "Point",
-                "coordinates": [25.980468, 60.579325]
+                "coordinates": [25.270568, 60.379425]
             }
         }
     ]
@@ -113,14 +113,7 @@ L.geoJson(geojsonFeatures, {
 	},
 	onEachFeature: onEachFeature,
 	pointToLayer: function (feature, latlng) {
-		return L.circleMarker(latlng, {
-			radius: 8,
-			fillColor: "#3b3288",
-			color: "#000",
-			weight: 1,
-			opacity: 1,
-			fillOpacity: 0.8
-		});
+		return L.circleMarker(latlng, {icon: mnIkoni});
 	}
 }).addTo(map);  
 
