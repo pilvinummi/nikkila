@@ -98,15 +98,15 @@ function onEachFeature(feature, layer) {
 	layer.bindPopup(popupContent);
 }
 
-
+/*
 var mnLayer = L.geoJson(geojsonFeature, {
 	pointToLayer: function (feature, latlng) {
 		return L.marker(latlng, {icon: mnIkoni});
 	},
 	onEachFeature: onEachFeature
 }).addTo(map);
+*/
 
-/*
 L.geoJson(geojsonFeatures, {
 	style: function (feature) {
 		return feature.properties && feature.properties.style;
@@ -124,7 +124,7 @@ L.geoJson(geojsonFeatures, {
 	}
 }).addTo(map);  
 
-*/
+
   /*
 L.geoJson(geojsonFeature, {
     onEachFeature: onEachFeature
