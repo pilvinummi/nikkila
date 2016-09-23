@@ -63,7 +63,7 @@ function onEachFeature(feature, layer) {
 var geojsonLayer = new L.GeoJSON.AJAX("MN_instagram_koe.json");
 geojsonLayer.addTo(map);
 
-
+/*
 var mnLayer = L.geoJson(muistot, {
 	pointToLayer: function (feature, latlng) {
 		return L.marker(latlng, {icon: mnIkoni});
@@ -71,7 +71,7 @@ var mnLayer = L.geoJson(muistot, {
 	onEachFeature: onEachFeature
 }).addTo(map);
 
-/*
+
 L.geoJson(geojsonFeatures, {
 	style: function (feature) {
 		return feature.properties && feature.properties.style;
