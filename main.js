@@ -46,45 +46,6 @@ function init() {
 	popupAnchor: [0, -24]
   });  
 
-  var geojsonFeature = {
-  	"type": "Feature", 
-  	"properties": { 
-  		"nimi": "Rosenholmin talo", 
-  		"instagram": "rosenholm.htm",
-  		"popupContent": "Tässä on rosenholmin talo."
-  	}, 
-  	"geometry": { 
-  		"type": "Point", 
-  		"coordinates": [25.270468, 60.379325]
-  	}
-  };
-  
-  
-  
-var geojsonFeatures = {
-    "type": "FeatureCollection",
-    "features": [
-        {
-            "type": "Feature",
-            "properties": {
-                "popupContent": "18th & California Light Rail Stop"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [25.270468, 60.379325]
-            }
-        },{
-            "type": "Feature",
-            "properties": {
-                "popupContent": "20th & Welton Light Rail Stop"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [25.980468, 60.479325]
-            }
-        }
-    ]
-};
 
   
 function onEachFeature(feature, layer) {
