@@ -115,29 +115,4 @@ var mnLayer = L.geoJson(geojsonFeatures, {
 }).addTo(map); 
   
   
-/*
-L.geoJson(geojsonFeatures, {
-	style: function (feature) {
-		return feature.properties && feature.properties.style;
-	},
-	onEachFeature: onEachFeature,
-	pointToLayer: function (feature, latlng) {
-		return L.circleMarker(latlng, {icon: mnIkoni});
-	}
-}).addTo(map);  
-*/
-
-  /*
-L.geoJson(geojsonFeature, {
-    onEachFeature: onEachFeature
-}).addTo(map);  
-  */
-//L.geoJson(geojsonFeature).addTo(map);
-
-//var myLayer = L.geoJson().addTo(map);
-//myLayer.addData(geojsonFeature);
-
-//var marker = L.marker([60.379325, 25.270468]).addTo(map);
-//marker.bindPopup("Rosenholmitalo.").openPopup();
-  
 }
