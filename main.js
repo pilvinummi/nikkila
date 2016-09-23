@@ -47,7 +47,7 @@ function init() {
   });  
 
 
-  
+/*  
 function onEachFeature(feature, layer) {
 	var popupContent = "<p>I started out as a GeoJSON " +
 			feature.geometry.type + ", but now I'm a Leaflet vector!</p>";
@@ -59,7 +59,20 @@ function onEachFeature(feature, layer) {
 	layer.bindPopup(popupContent);
 }
 
+*/
 
+//var map = L.map('map').setView([32.71, -85.59], 10);
+//var layer = L.esri.basemapLayer('Topographic').addTo(map);
+var geojsonLayer = new L.GeoJSON.AJAX('instagram.geojson', {onEachFeature:popUp}, {style:geojson});
+var myStyle = {"color": "#ff7800", "weight": 4, "opacity": 0.65};
+geojsonLayer.addTo(map);
+
+function popUp(feature, layer) {
+    layer.bindPopup(feature.properties.name);
+}
+
+
+/*
 var geojsonLayer = new L.GeoJSON.AJAX("https://pilvinummi.github.io/nikkila/MN_instagram_koe.geojson");
 geojsonLayer.addTo(map);
 
