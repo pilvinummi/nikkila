@@ -1,7 +1,7 @@
 function init() {
   
   //Aineistot
-  var muistot_url = "https://pilvinummi.github.io/nikkila/instagramkoe.geojson"
+  var muistot = "https://pilvinummi.github.io/nikkila/MN_instagram_koe.json"
   
 
   var southWest = L.latLng(60.352727, 25.218447);
@@ -46,46 +46,7 @@ function init() {
 	popupAnchor: [0, -24]
   });  
 
-  // load GeoJSON from an external file
-  $.getJSON("instagramkoe.geojson",function(data){
-    // add GeoJSON layer to the map once the file is loaded
-    L.geoJson(data).addTo(map);
-  });
-
-/*
-  //Aineiston lataaminen
-  var muistot_layer = $.ajax({ 
-    url: muistot_url,
-    datatype:"json",
-    jsonCallback: 'getJson',
-    success : function (response) {
-      instamuistot = L.geoJson(response, {
-        style: function (feature) {
-      
-          return {
-      	    color: "#000",
-          };
-		      
-        },
-        onEachFeature: function (feature, layer) {
-            
-          layer.on('click', function() {
-            information.innerHTML = '';
-            information.innerHTML = ("<b>Osoite: </b> " + feature.properties.Html +
-            "jotain muuta";
-          });
-        
-          layer.on({
-            click: panToFeature
-          });    
-                      
-        }
-      }).addTo(map);
-    }
-  }); 
-*/
-/*
-var geojsonFeature = {
+  var geojsonFeature = {
   	"type": "Feature", 
   	"properties": { 
   		"nimi": "Rosenholmin talo", 
@@ -97,20 +58,35 @@ var geojsonFeature = {
   		"coordinates": [25.270468, 60.379325]
   	}
   };
-*/
-/*
-var geojsonFeatureCollection = {
-	"type": "FeatureCollection",
-	"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3857" } },
-                                                                                
-	"features": [
-	{ "type": "Feature", "properties": { "Nro": 24.000000, "Paikka": "Aravatalo", "Lisätieto": "Yksityisyyttä", "Html": "https:\/\/instagram.com\/p\/BFcBpQYE5cP\/" }, "geometry": { "type": "Point", "coordinates": [ 2812671.9389817058, 8483930.9057844654, 0.0 ] } }
-	]
+  
+  
+  
+var geojsonFeatures = {
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "popupContent": "18th & California Light Rail Stop"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [25.270468, 60.379325]
+            }
+        },{
+            "type": "Feature",
+            "properties": {
+                "popupContent": "20th & Welton Light Rail Stop"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [25.980468, 60.479325]
+            }
+        }
+    ]
 };
-*/
 
-
-/*  
+  
 function onEachFeature(feature, layer) {
 	var popupContent = "<p>I started out as a GeoJSON " +
 			feature.geometry.type + ", but now I'm a Leaflet vector!</p>";
@@ -122,26 +98,8 @@ function onEachFeature(feature, layer) {
 	layer.bindPopup(popupContent);
 }
 
-*/
 
-//var map = L.map('map').setView([32.71, -85.59], 10);
-//var layer = L.esri.basemapLayer('Topographic').addTo(map);
-/*
-var geojsonLayer = new L.GeoJSON.AJAX('instagramkoe.geojson', {onEachFeature:popUp}, {style:geojson});
-var myStyle = {"color": "#ff7800", "weight": 4, "opacity": 0.65};
-geojsonLayer.addTo(map);
-
-function popUp(feature, layer) {
-    layer.bindPopup(feature.properties.name);
-}
-*/
-
-/*
-var geojsonLayer = new L.GeoJSON.AJAX("https://pilvinummi.github.io/nikkila/MN_instagram_koe.geojson");
-geojsonLayer.addTo(map);
-
-/*
-var mnLayer = L.geoJson(muistot, {
+var mnLayer = L.geoJson(geojsonFeature, {
 	pointToLayer: function (feature, latlng) {
 		return L.marker(latlng, {icon: mnIkoni});
 	},
