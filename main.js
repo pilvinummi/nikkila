@@ -99,7 +99,7 @@ function onEachFeature(feature, layer) {
 }
 
 
-var mnLayer = L.geoJson(geojsonFeature, {
+var mnLayer = L.geoJson(muistot, {
 	pointToLayer: function (feature, latlng) {
 		return L.marker(latlng, {icon: mnIkoni});
 	},
