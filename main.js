@@ -1,7 +1,7 @@
 function init() {
   
   //Aineistot
-  var muistot = "https://pilvinummi.github.io/nikkila/MN_instagram_koe.geojson"
+  var muistot_url = "https://pilvinummi.github.io/nikkila/MN_instagram_koe.geojson"
   
 
   var southWest = L.latLng(60.352727, 25.218447);
@@ -45,6 +45,62 @@ function init() {
 	iconAnchor: [15, 36],
 	popupAnchor: [0, -24]
   });  
+
+  //Aineiston lataaminen
+  var muistot_layer = $.ajax({ 
+    url: muistot_url,
+    datatype:"json",
+    jsonCallback: 'getJson',
+    success : function (response) {
+      instamuistot = L.geoJson(response, {
+        style: function (feature) {
+      
+          return {
+      	    color: "#000",
+          };
+		      
+        },
+        onEachFeature: function (feature, layer) {
+            
+          layer.on('click', function() {
+            information.innerHTML = '';
+            information.innerHTML = ("<b>Osoite: </b> " + feature.properties.Html +
+            "jotain muuta";
+          });
+        
+          layer.on({
+            click: panToFeature
+          });    
+                      
+        }
+      }).addTo(map);
+    }
+  }); 
+
+/*
+var geojsonFeature = {
+  	"type": "Feature", 
+  	"properties": { 
+  		"nimi": "Rosenholmin talo", 
+  		"instagram": "rosenholm.htm",
+  		"popupContent": "Tässä on rosenholmin talo."
+  	}, 
+  	"geometry": { 
+  		"type": "Point", 
+  		"coordinates": [25.270468, 60.379325]
+  	}
+  };
+*/
+/*
+var geojsonFeatureCollection = {
+	"type": "FeatureCollection",
+	"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3857" } },
+                                                                                
+	"features": [
+	{ "type": "Feature", "properties": { "Nro": 24.000000, "Paikka": "Aravatalo", "Lisätieto": "Yksityisyyttä", "Html": "https:\/\/instagram.com\/p\/BFcBpQYE5cP\/" }, "geometry": { "type": "Point", "coordinates": [ 2812671.9389817058, 8483930.9057844654, 0.0 ] } }
+	]
+};
+*/
 
 
 /*  
