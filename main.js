@@ -107,6 +107,14 @@ var mnLayer = L.geoJson(geojsonFeature, {
 }).addTo(map);
 */
 
+var mnLayer = L.geoJson(geojsonFeatures, {
+	onEachFeature: onEachFeature,
+	pointToLayer: function (feature, latlng) {
+		return L.circleMarker(latlng, {icon: mnIkoni});
+	}
+}).addTo(map); 
+
+/*
 L.geoJson(geojsonFeatures, {
 	style: function (feature) {
 		return feature.properties && feature.properties.style;
@@ -116,7 +124,7 @@ L.geoJson(geojsonFeatures, {
 		return L.circleMarker(latlng, {icon: mnIkoni});
 	}
 }).addTo(map);  
-
+*/
 
   /*
 L.geoJson(geojsonFeature, {
